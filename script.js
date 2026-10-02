@@ -83,6 +83,31 @@ const updateProgress = () => {
   const scrollable = document.documentElement.scrollHeight - innerHeight;
   progressBar.style.width = `${scrollable > 0 ? Math.min(100, (scrollY / scrollable) * 100) : 0}%`;
 };
-addEventListener("scroll", updateProgress, { passive: true });
-addEventListener("resize", updateProgress);
-updateProgress();
+
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+const storyImages = [...document.querySelectorAll(".story-card img")];
+let animationFrame;
+
+const updateViewportEffects = () => {
+  updateProgress();
+
+  if (!reducedMotion.matches) {
+    storyImages.forEach((image) => {
+      const card = image.closest(".story-card");
+      const bounds = card.getBoundingClientRect();
+      const distanceFromCenter = bounds.top + bounds.height / 2 - innerHeight / 2;
+      const shift = Math.max(-8, Math.min(8, distanceFromCenter * -0.012));
+      image.style.setProperty("--image-shift", `${shift}px`);
+    });
+  }
+
+  animationFrame = undefined;
+};
+
+const requestViewportUpdate = () => {
+  if (!animationFrame) animationFrame = requestAnimationFrame(updateViewportEffects);
+};
+
+addEventListener("scroll", requestViewportUpdate, { passive: true });
+addEventListener("resize", requestViewportUpdate);
+updateViewportEffects();
