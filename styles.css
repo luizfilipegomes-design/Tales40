@@ -13,6 +13,7 @@
 }
 
 * { box-sizing: border-box; }
+img { display: block; max-width: 100%; }
 html { scroll-behavior: smooth; background: var(--ink); }
 body { margin: 0; color: var(--paper); background: var(--ink); font-family: var(--sans); overflow-x: hidden; }
 body.is-locked { overflow: hidden; }
@@ -48,21 +49,27 @@ body.has-entered .progress { opacity: 1; }
 .prologue h2 { max-width: 10em; margin: 1.25rem 0; font: 400 clamp(2.8rem, 8vw, 5.5rem)/.95 var(--serif); }
 .prologue > p:last-child { max-width: 31rem; color: var(--muted); font: 400 1rem/1.8 var(--serif); }
 
-.story-card { position: relative; min-height: 100svh; overflow: hidden; background: #171215; }
+.story-card { position: relative; display: grid; min-height: 100svh; overflow: hidden; background: #171215; isolation: isolate; }
 .story-card__media { position: absolute; inset: 0; }
-.story-card__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(9,7,8,.15) 20%, rgba(9,7,8,.9) 100%); }
-.story-card img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.025); transition: transform 1.8s cubic-bezier(.2,.7,.2,1); }
+.story-card__media::after { content: ""; position: absolute; z-index: 2; inset: 0; background: linear-gradient(180deg, rgba(9,7,8,.05) 35%, rgba(9,7,8,.92) 100%); pointer-events: none; }
+.story-card__frame { position: absolute; overflow: hidden; margin: 0; background: var(--wine); box-shadow: 0 1.5rem 4rem rgba(0,0,0,.38); }
+.story-card img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.035); transition: transform 1.8s cubic-bezier(.2,.7,.2,1); }
 .story-card.is-visible img { transform: scale(1); }
-.story-card__content { position: absolute; z-index: 1; right: 0; bottom: 0; left: 0; padding: 3rem 1.5rem max(3rem, env(safe-area-inset-bottom)); }
+.story-card__content { position: absolute; z-index: 3; right: 0; bottom: 0; left: 0; padding: 3rem 1.5rem max(3rem, env(safe-area-inset-bottom)); }
 .story-card__count { color: var(--gold); font-size: .58rem; letter-spacing: .22em; }
-.story-card h3 { max-width: 12em; margin: .55rem 0 .5rem; font: italic 400 clamp(2rem, 9vw, 4.5rem)/1.05 var(--serif); }
-.story-card__caption { max-width: 30rem; margin: 0; color: #d4cac7; font: 400 .9rem/1.6 var(--sans); }
-.story-card--portrait { display: grid; min-height: 110svh; place-items: center; padding: 8rem 1.5rem; background: radial-gradient(circle at 70% 35%, #391723, #110d0f 62%); }
-.story-card--portrait .story-card__media { position: relative; width: min(76vw, 30rem); height: min(72vh, 44rem); box-shadow: 0 2rem 4rem rgba(0,0,0,.42); }
-.story-card--portrait .story-card__content { position: absolute; left: max(1.5rem, 8vw); bottom: 2.5rem; }
-.story-card--detail { min-height: 82svh; margin: 0; }
-.story-card--detail .story-card__media { inset: 8% 0 0 14%; }
-.story-card--detail .story-card__content { width: min(90%, 35rem); padding-left: max(1.5rem, 7vw); }
+.story-card h3 { max-width: min(12em, 100%); overflow-wrap: anywhere; margin: .55rem 0 .5rem; font: italic 400 clamp(2rem, 8vw, 4.5rem)/1.05 var(--serif); }
+
+.story-card--cinematic .story-card__frame--1 { inset: 0 22% 0 0; }
+.story-card--cinematic .story-card__frame--2 { z-index: 1; right: 4vw; top: 9%; width: min(31vw, 22rem); height: 43%; border: 1px solid rgba(243,238,232,.42); }
+.story-card--duo, .story-card--duo-reverse { background: radial-gradient(circle at 50% 35%, #421a29, #100d0f 70%); }
+.story-card--duo .story-card__frame, .story-card--duo-reverse .story-card__frame { top: 8%; bottom: 19%; width: 45%; }
+.story-card--duo .story-card__frame--1, .story-card--duo-reverse .story-card__frame--2 { left: 3%; }
+.story-card--duo .story-card__frame--2, .story-card--duo-reverse .story-card__frame--1 { right: 3%; top: 15%; bottom: 12%; }
+.story-card--overlap { min-height: 110svh; background: linear-gradient(135deg, #100d0f, #351520); }
+.story-card--overlap .story-card__frame--1 { top: 6%; bottom: 14%; left: 8%; width: 56%; }
+.story-card--overlap .story-card__frame--2 { z-index: 1; top: 18%; right: 6%; width: 43%; height: 58%; border: .4rem solid #1c1015; }
+.story-card--final-frame .story-card__frame--1 { inset: 0 0 0 34%; }
+.story-card--final-frame .story-card__frame--2 { z-index: 1; left: 5%; top: 10%; width: 34%; height: 55%; border: 1px solid rgba(201,170,115,.55); }
 
 .interlude { display: grid; min-height: 75svh; place-content: center; padding: 3rem 1.5rem; text-align: center; background: var(--wine); }
 .interlude span { height: 3rem; color: var(--gold); font: 400 6rem/.7 var(--serif); opacity: .55; }
@@ -87,8 +94,26 @@ body.has-entered .progress { opacity: 1; }
 @keyframes nudge { 50% { transform: translateY(.3rem); } }
 @media (min-width: 750px) {
   .story-card__content { padding: 5rem 8vw; }
-  .story-card--detail .story-card__media { inset: 10% 8% 8% 35%; }
-  .story-card--detail .story-card__content { top: 50%; bottom: auto; transform: translateY(-50%); }
+  .story-card--duo .story-card__frame, .story-card--duo-reverse .story-card__frame { width: 41%; }
+  .story-card--duo .story-card__frame--1, .story-card--duo-reverse .story-card__frame--2 { left: 8%; }
+  .story-card--duo .story-card__frame--2, .story-card--duo-reverse .story-card__frame--1 { right: 8%; }
+}
+@media (max-width: 749px) {
+  .hero h1 { font-size: clamp(2.3rem, 13vw, 3.5rem); letter-spacing: .12em; }
+  .hero__number { font-size: clamp(10rem, 52vw, 14rem); }
+  .prologue, .story-card__content, .interlude, .finale { padding-right: max(1.25rem, env(safe-area-inset-right)); padding-left: max(1.25rem, env(safe-area-inset-left)); }
+  .prologue h2 { font-size: clamp(2.35rem, 12vw, 3.6rem); overflow-wrap: anywhere; }
+  .story-card--cinematic .story-card__frame--1 { right: 12%; }
+  .story-card--cinematic .story-card__frame--2 { right: 5%; top: 8%; width: 38%; height: 35%; }
+  .story-card--duo .story-card__frame, .story-card--duo-reverse .story-card__frame { top: 7%; bottom: 25%; width: 55%; }
+  .story-card--duo .story-card__frame--1, .story-card--duo-reverse .story-card__frame--2 { left: 0; }
+  .story-card--duo .story-card__frame--2, .story-card--duo-reverse .story-card__frame--1 { right: 0; top: 20%; bottom: 12%; }
+  .story-card--overlap .story-card__frame--1 { left: 0; width: 70%; }
+  .story-card--overlap .story-card__frame--2 { right: 0; width: 49%; }
+  .story-card--final-frame .story-card__frame--1 { left: 20%; }
+  .story-card--final-frame .story-card__frame--2 { left: 0; width: 42%; height: 45%; }
+  .interlude p { max-width: 100%; font-size: clamp(1.65rem, 8.5vw, 2.75rem); }
+  .finale h2 { max-width: 100%; font-size: clamp(4.5rem, 25vw, 8rem); }
 }
 @media (max-height: 680px) { .hero__monogram { height: 11rem; } .hero__number { font-size: 11rem; } .hero__message { margin-bottom: .5rem; } .enter-button { margin-top: .75rem; } }
 @media (prefers-reduced-motion: reduce) {

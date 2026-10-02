@@ -4,25 +4,25 @@ Convite estático, responsivo e sem dependências para a comemoração dos 40 an
 
 ## Fotos e legendas
 
-1. Coloque as fotos otimizadas em `assets/images/` (WebP ou JPEG, idealmente com até 1600 px no maior lado).
-2. Em `script.js`, edite a lista `storyMoments`. **Cada objeto reúne `image`, `alt` e `caption`**, garantindo que a legenda sempre acompanhe a foto correta. `chapter` define o capítulo e `layout` aceita `fullscreen`, `portrait` ou `detail`.
-3. Para adicionar ou reordenar momentos, adicione ou mova o objeto completo — nunca apenas a legenda. Os SVGs atuais são placeholders identificados e podem ser removidos quando nenhuma entrada os utilizar.
+1. As dez fotos da narrativa ficam em `assets/images/`, nomeadas de `tales-01.jpg` a `tales-10.jpg`.
+2. Em `script.js`, edite a lista `storyChapters`. **Cada objeto reúne duas imagens, texto e enquadramentos**, garantindo que a composição sempre acompanhe o capítulo correto. `layout` define a composição editorial do capítulo.
+3. Para adicionar ou reordenar capítulos, adicione ou mova o objeto completo — nunca apenas uma imagem ou legenda.
 
 Exemplo:
 
 ```js
 {
-  image: "assets/images/tales-infancia.webp",
-  alt: "Tales sorrindo durante uma festa na infância",
+  images: ["assets/images/tales-01.jpg", "assets/images/tales-02.jpg"],
   caption: "Onde tudo começou.",
   chapter: "Começos",
-  layout: "fullscreen"
+  layout: "cinematic",
+  positions: ["50% 28%", "50% 34%"]
 }
 ```
 
 ## Prévia do WhatsApp
 
-Adicione futuramente `assets/images/whatsapp-preview.jpg` como uma imagem de **1200 × 630 px com uma foto real do Tales**. O arquivo não está incluído nesta versão. Antes de publicar, troque `SEU-USUARIO` nas tags `og:image`, `og:url` e `twitter:image` de `index.html` pelo usuário ou domínio definitivo. O WhatsApp exige uma URL pública absoluta para gerar a prévia.
+A prévia social usa `assets/images/tales-10.jpg`. Depois de definir o domínio público, use URLs absolutas nas tags `og:image`, `og:url` e `twitter:image` de `index.html` para maximizar a compatibilidade com aplicativos de mensagem.
 
 ## Testar localmente
 
