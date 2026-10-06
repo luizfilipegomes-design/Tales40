@@ -1,11 +1,35 @@
 /**
- * Cada capítulo reúne duas fotografias e seu texto narrativo.
+ * Cada capítulo reúne fotografias e seu texto narrativo.
  * Os caminhos são relativos à raiz do projeto para funcionarem no GitHub Pages.
  */
 const storyChapters = [
   {
-    chapter: "Começos",
-    caption: "Todo grande caminho começa com um primeiro passo.",
+    chapter: "Primeiros sorrisos",
+    caption: "Antes de tudo, um sorriso. E uma vida inteira pela frente.",
+    images: ["assets/images/infancia-01.jpg", "assets/images/infancia-02.jpg", "assets/images/infancia-03.jpg"],
+    alts: ["Tales bebê em uma piscina infantil", "Retrato de Tales criança, sorrindo com a mão sob o queixo", "Tales criança com colete e gravata borboleta"],
+    layout: "album",
+    positions: ["50% 48%", "50% 50%", "50% 50%"]
+  },
+  {
+    chapter: "Pequenos mundos",
+    caption: "A curiosidade já estava ali. O jeito de ser, também.",
+    images: ["assets/images/infancia-04.jpg", "assets/images/infancia-05.jpg", "assets/images/infancia-06.jpg"],
+    alts: ["Tales criança brincando junto a um móvel de madeira", "Tales criança ao lado de uma mulher em uma foto de família", "Tales criança usando um cocar de penas e colar"],
+    layout: "album",
+    positions: ["50% 50%", "50% 50%", "50% 50%"]
+  },
+  {
+    chapter: "Um jeito de ser",
+    caption: "Entre brincadeiras e descobertas, a história ganhava novas cores.",
+    images: ["assets/images/infancia-07.jpg", "assets/images/infancia-08.jpg", "assets/images/infancia-09.jpg"],
+    alts: ["Tales criança com jaqueta preta e óculos sobre a cabeça", "Tales subindo uma corda em um ginásio", "Tales adolescente pintando em um cavalete"],
+    layout: "album",
+    positions: ["50% 50%", "50% 50%", "50% 50%"]
+  },
+  {
+    chapter: "Novos caminhos",
+    caption: "O menino cresceu. E o mundo ficou maior.",
     images: ["assets/images/tales-01.jpg", "assets/images/tales-02.jpg"],
     layout: "cinematic",
     positions: ["50% 28%", "50% 34%"]
@@ -51,7 +75,7 @@ storyChapters.forEach((moment, index) => {
   const images = moment.images.map((source, imageIndex) => `
     <figure class="story-card__frame story-card__frame--${imageIndex + 1}">
       <img src="${source}"
-        alt="Tales em um momento do capítulo ${moment.chapter}"
+        alt="${moment.alts?.[imageIndex] || `Tales em um momento do capítulo ${moment.chapter}`}"
         style="object-position: ${moment.positions[imageIndex]}"
         ${index === 0 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
     </figure>`).join("");
@@ -85,7 +109,7 @@ const updateProgress = () => {
 };
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-const storyImages = [...document.querySelectorAll(".story-card img")];
+const storyImages = [...document.querySelectorAll(".story-card:not(.story-card--album) img")];
 let animationFrame;
 
 const updateViewportEffects = () => {

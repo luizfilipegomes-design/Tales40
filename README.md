@@ -50,3 +50,16 @@ Na raiz do projeto, execute `python3 -m http.server 8000` e abra `http://localho
 ## Publicar no GitHub Pages
 
 No GitHub, acesse **Settings → Pages**, selecione **Deploy from a branch**, escolha a branch principal e a pasta `/ (root)`. Todos os caminhos do site são relativos e funcionam quando publicado no subdiretório `/Tales40/`.
+
+
+## Álbum de infância
+
+A narrativa começa com três capítulos de arquivo (nove fotos diferentes), seguidos pelas dez fotos adultas já aprovadas. A ordem é editorial e aproximada, sem atribuir datas ou parentescos não confirmados. Os dois pares duplicados dos anexos foram usados uma vez cada.
+
+`assets/images/infancia-01.jpg` é a foto original da piscina, com enquadramento apenas por CSS: a restauração foi bloqueada pela ferramenta de imagens. `infancia-02.jpg` a `infancia-09.jpg` são versões tratadas com a ferramenta integrada de imagens: orientação, extração do impresso, cores, reflexos e desgaste. São restaurações assistidas por IA, não digitalizações documentais; compare especialmente a região dos olhos na foto da jaqueta com o original antes da publicação. Os arquivos originais fornecidos pelo usuário permanecem intactos fora do repositório.
+
+O layout de álbum preserva a composição das fotos, sem parallax/zoom, e empilha os retratos em celulares. A sequência adulta e a trilha CC0 continuam funcionando como antes.
+
+### Publicação
+
+As alterações estão na branch `codex/trilha-sonora`, no PR #5. Para publicar no GitHub Pages, revisar as fotos e fazer merge do PR na `main`. Nenhum merge automático foi executado.

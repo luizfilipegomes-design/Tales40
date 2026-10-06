@@ -153,3 +153,19 @@ body.has-entered .progress { opacity: 1; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Fotografias de arquivo: composição completa, sem zoom ou parallax. */
+.story-card--album { min-height: auto; gap: 2.5rem; padding-top: 5rem; padding-bottom: 6rem; }
+.story-card--album .story-card__content { position: relative; inset: auto; order: -1; width: min(100%, 76rem); margin: auto; padding: 0; background: none; box-shadow: none; }
+.story-card--album h3 { max-width: 21em; }
+.story-card--album .story-card__media { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; min-height: 0; align-items: center; }
+.story-card--album .story-card__frame { position: relative; padding: .65rem; background: var(--paper); }
+.story-card--album .story-card__frame::after { box-shadow: none; }
+.story-card--album img, .story-card--album.is-visible img { height: auto; object-fit: contain; transform: none; will-change: auto; }
+.story-card--album .story-card__frame:nth-child(2) { margin-top: 3rem; }
+/* A foto da piscina permanece original; o enquadramento exclui bordas externas. */
+.story-card--album img[src$="infancia-01.jpg"] { aspect-ratio: 5 / 7; object-fit: cover; }
+@media (max-width: 749px) {
+  .story-card--album .story-card__media { grid-template-columns: 1fr; gap: 2rem; max-width: 30rem; }
+  .story-card--album .story-card__frame:nth-child(2) { margin-top: 0; }
+}
