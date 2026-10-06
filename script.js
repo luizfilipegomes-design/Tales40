@@ -58,9 +58,25 @@ const storyChapters = [
   {
     chapter: "Memórias",
     caption: "Feito de momentos que merecem ser celebrados.",
-    images: ["assets/images/tales-09.jpg", "assets/images/tales-10.jpg"],
-    layout: "final-frame",
-    positions: ["50% 28%", "50% 30%"]
+    images: ["assets/images/tales-09.jpg"],
+    layout: "portrait",
+    positions: ["50% 50%"]
+  },
+  {
+    chapter: "Amor que permanece",
+    caption: "À minha avó, com amor. Sua presença vive em mim.",
+    images: ["assets/images/tales-avo.jpg"],
+    alts: ["Tales sorrindo ao lado de sua avó, em uma fotografia em preto e branco"],
+    layout: "portrait",
+    positions: ["50% 50%"]
+  },
+  {
+    chapter: "Companheiros de vida",
+    caption: "Chopin e Bisteca. Amor que faz parte de todos os dias.",
+    images: ["assets/images/tales-chopin-bisteca.jpg"],
+    alts: ["Tales segurando seus dois cães de estimação, Chopin e Bisteca"],
+    layout: "portrait",
+    positions: ["50% 50%"]
   }
 ];
 
@@ -109,7 +125,7 @@ const updateProgress = () => {
 };
 
 const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
-const storyImages = [...document.querySelectorAll(".story-card:not(.story-card--album) img")];
+const storyImages = [...document.querySelectorAll(".story-card:not(.story-card--album):not(.story-card--portrait) img")];
 let animationFrame;
 
 const updateViewportEffects = () => {

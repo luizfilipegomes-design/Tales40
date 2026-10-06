@@ -169,3 +169,11 @@ body.has-entered .progress { opacity: 1; }
   .story-card--album .story-card__media { grid-template-columns: 1fr; gap: 2rem; max-width: 30rem; }
   .story-card--album .story-card__frame:nth-child(2) { margin-top: 0; }
 }
+
+/* Retratos afetivos completos, com texto separado da fotografia. */
+.story-card--portrait { min-height: auto; gap: 2.5rem; }
+.story-card--portrait .story-card__content { position: relative; inset: auto; order: -1; width: min(100%, 58rem); margin: auto; padding: 0; background: none; box-shadow: none; }
+.story-card--portrait h3 { max-width: 20em; }
+.story-card--portrait .story-card__media { width: min(100%, 48rem); min-height: 0; }
+.story-card--portrait .story-card__frame { position: relative; width: 100%; }
+.story-card--portrait img, .story-card--portrait.is-visible img { height: auto; object-fit: contain; transform: none; will-change: auto; }
