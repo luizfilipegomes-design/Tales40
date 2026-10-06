@@ -53,7 +53,7 @@ No GitHub, acesse **Settings → Pages**, selecione **Deploy from a branch**, es
 
 ## Álbum de infância
 
-A narrativa começa com três capítulos de arquivo (nove fotos diferentes), seguidos por nove fotos da sequência adulta e duas novas fotos afetivas. A ordem é editorial e aproximada, sem atribuir datas ou parentescos não confirmados. Os dois pares duplicados dos anexos foram usados uma vez cada.
+A narrativa começa com três capítulos de arquivo (nove fotos diferentes), seguidos por oito fotos da sequência adulta e duas novas fotos afetivas. A ordem é editorial e aproximada, sem atribuir datas ou parentescos não confirmados. Os dois pares duplicados dos anexos foram usados uma vez cada.
 
 `assets/images/infancia-01.jpg` é a foto original da piscina, com enquadramento apenas por CSS: a restauração foi bloqueada pela ferramenta de imagens. `infancia-02.jpg` a `infancia-09.jpg` são versões tratadas com a ferramenta integrada de imagens: orientação, extração do impresso, cores, reflexos e desgaste. São restaurações assistidas por IA, não digitalizações documentais; compare especialmente a região dos olhos na foto da jaqueta com o original antes da publicação. Os arquivos originais fornecidos pelo usuário permanecem intactos fora do repositório.
 
@@ -66,4 +66,6 @@ As alterações estão na branch `codex/trilha-sonora`, no PR #5. Para publicar 
 
 ## Revisão afetiva final
 
-A última foto anterior (`tales-10.jpg`) foi retirada da narrativa. A foto com a avó aparece no capítulo “Amor que permanece”, como homenagem; a foto com Chopin e Bisteca encerra a galeria em “Companheiros de vida”. Ambas são cópias dos JPEGs originais enviados, sem restauração ou alteração de conteúdo, e exibidas integralmente sem zoom/parallax. A narrativa contém 20 fotos em dez capítulos. Não foram atribuídos nomes individuais aos cães pela posição na imagem.
+A última foto anterior (`tales-10.jpg`) foi retirada da narrativa. A foto com a avó aparece no capítulo “Amor que permanece”, como homenagem; a foto com Chopin e Bisteca encerra a galeria em “Companheiros de vida”. Ambas são cópias dos JPEGs originais enviados, sem restauração ou alteração de conteúdo, e exibidas integralmente sem zoom/parallax. A narrativa contém 19 fotos em nove capítulos. Não foram atribuídos nomes individuais aos cães pela posição na imagem.
+
+A foto da sala de espera do aeroporto (`tales-09.jpg`) também foi retirada da narrativa, a pedido do usuário. Os arquivos anteriores permanecem no histórico do projeto.

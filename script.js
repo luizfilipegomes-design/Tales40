@@ -56,13 +56,6 @@ const storyChapters = [
     positions: ["50% 30%", "50% 30%"]
   },
   {
-    chapter: "Memórias",
-    caption: "Feito de momentos que merecem ser celebrados.",
-    images: ["assets/images/tales-09.jpg"],
-    layout: "portrait",
-    positions: ["50% 50%"]
-  },
-  {
     chapter: "Amor que permanece",
     caption: "À minha avó, com amor. Sua presença vive em mim.",
     images: ["assets/images/tales-avo.jpg"],
