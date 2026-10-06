@@ -1,6 +1,6 @@
-// Defina o caminho relativo somente depois de adicionar a trilha e sua licença.
-// Exemplo: "assets/audio/trilha.mp3". Vazio mantém o convite sem áudio.
-const soundtrackSource = "";
+// Trilha CC0: cirrus coalescence, por gonpulvo. Veja assets/audio/LICENSE.md.
+// Caminho relativo para funcionar no GitHub Pages. Vazio desativa o áudio.
+const soundtrackSource = "assets/audio/cirrus-coalescence.mp3";
 
 (() => {
   const button = document.querySelector("#musicButton");

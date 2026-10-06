@@ -18,7 +18,7 @@ function setup(configured = true) {
     play() { this.calls++; return new Promise((resolve, reject) => { this.resolve = resolve; this.reject = reject; }); }
     pause() { this.listeners.pause(); }
   }
-  vm.runInNewContext(configured ? source.replace('const soundtrackSource = "";', 'const soundtrackSource = "assets/audio/trilha.mp3";') : source,
+  vm.runInNewContext(configured ? source : source.replace(/const soundtrackSource = "[^"]*";/, 'const soundtrackSource = "";'),
     { Audio: FakeAudio, document: { querySelector: selector => ({ '#musicButton': button, '#musicStatus': status, '#enterButton': entry })[selector] } });
   return { button, entry, status, audio };
 }

@@ -24,15 +24,16 @@ Exemplo:
 
 A prévia social usa `assets/images/tales-10.jpg`. Depois de definir o domínio público, use URLs absolutas nas tags `og:image`, `og:url` e `twitter:image` de `index.html` para maximizar a compatibilidade com aplicativos de mensagem.
 
-## Testar localmente
-
 ## Trilha sonora
 
-A implementação está pronta, mas **nenhuma música foi incluída**: o repositório ainda não contém um arquivo de áudio com licença de uso.
+A trilha incluída é **cirrus coalescence**, de **gonpulvo**, publicada pelo autor sob **CC0 1.0 (dedicação ao domínio público)**.
 
-1. Adicione uma trilha autorizada em `assets/audio/trilha.mp3` (MP3 para ampla compatibilidade). Não use uma música comercial sem autorização para publicá-la no site.
-2. Registre em `assets/audio/LICENSE.md` o título, autor, origem, licença/autorização e a atribuição exigida. Se a licença exigir crédito visível, inclua esse crédito no convite antes de publicar.
-3. Em `music.js`, altere `const soundtrackSource = "";` para `const soundtrackSource = "assets/audio/trilha.mp3";`. O caminho relativo funciona no GitHub Pages em `/Tales40/`.
+- Arquivo: `assets/audio/cirrus-coalescence.mp3` (original, sem alterações; aproximadamente 2min48s, 6,74 MB).
+- Origem e licença: [página do autor no WeeklyBeats](https://weeklybeats.com/gonpulvo/music/cirrus-coalescence).
+- Registro da licença e integridade: `assets/audio/LICENSE.md`.
+- Configuração: `soundtrackSource` em `music.js`, com caminho relativo compatível com `/Tales40/` no GitHub Pages.
+
+Para substituir a trilha, adicione um MP3 autorizado, atualize `soundtrackSource` e registre a licença correspondente. Defina o caminho como `""` para desativar o áudio.
 
 A trilha começa apenas no primeiro clique em **Entrar na história**, repete em loop e usa volume solicitado de 20%. O controle fixo **♫ Música ON/OFF** pausa e retoma do mesmo ponto, aceita teclado e tem área de toque de pelo menos 44px. Em alguns dispositivos, como iOS, o volume pode seguir o controle físico do aparelho em vez do valor definido pelo site.
 
@@ -40,7 +41,7 @@ Sem arquivo configurado, não há requisição de áudio e o controle mostra **M
 
 Validação automatizada: `node --test tests/music.test.cjs`.
 
-Após adicionar o arquivo real, teste em Chrome/Firefox/Safari desktop e Safari iOS/Chrome Android: silêncio antes da entrada, início no clique, ON/OFF, retomada, loop, volume do aparelho, navegação completa e URL no GitHub Pages. Teste também arquivo ausente e bloqueio de reprodução. A reprodução real e o volume precisam dessa validação com a trilha licenciada.
+Antes de publicar, teste em Chrome/Firefox/Safari desktop e Safari iOS/Chrome Android: silêncio antes da entrada, início no clique, ON/OFF, retomada, loop, volume do aparelho, navegação completa e URL no GitHub Pages. Teste também arquivo ausente e bloqueio de reprodução. O volume e as restrições de reprodução devem ser conferidos em aparelhos reais.
 
 ## Prévia local
 
