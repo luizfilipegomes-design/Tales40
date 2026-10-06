@@ -1,25 +1,24 @@
-# Trilha sonora — cirrus coalescence
+# Trilha sonora — High-End Hustle - Fashion Luxury Disco
 
-- Título: cirrus coalescence
-- Autor: gonpulvo
-- Publicação: 12 de julho de 2026
-- Página do autor: https://weeklybeats.com/gonpulvo/music/cirrus-coalescence
-- Arquivo original: https://weeklybeats.s3.amazonaws.com/music/2026/gonpulvo_weeklybeats-2026_28_cirrus-coalescence.mp3
-- Licença declarada pelo autor: CC0 Creative Commons Zero (Public Domain).
-- Termos CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/
-- Texto legal: https://creativecommons.org/publicdomain/zero/1.0/legalcode
-- Verificação e download: 6 de outubro de 2026.
+- Autor: Rockot.
+- Publicação: 22 de outubro de 2024.
+- Página oficial e download: https://pixabay.com/music/upbeat-high-end-hustle-fashion-luxury-disco-253184/
+- Licença: Pixabay Content License (não é CC0 nem domínio público).
+- Resumo: https://pixabay.com/service/license-summary/
+- Termos completos: https://pixabay.com/service/terms/
+- Verificação e download pelo botão oficial: 6 de outubro de 2026.
 
-A página da obra informa: “Audio works licensed by author under: CC0 Creative Commons Zero (Public Domain)”.
-A CC0 permite copiar, modificar e distribuir o áudio, inclusive comercialmente, sem solicitar permissão ou atribuição obrigatória. Este registro preserva o crédito e a procedência.
+## Uso neste projeto
+
+Áudio utilizado como trilha da obra composta Tales40, combinando narrativa, fotografias, textos e interface. A licença permite utilização gratuita em projetos comerciais e não comerciais e não exige atribuição. O crédito é preservado por transparência.
+
+A licença proíbe vender ou distribuir o conteúdo de forma independente (standalone). A presença do arquivo neste projeto não concede licença geral sobre ele: não extrair/republicar a música como biblioteca de áudio. Consultar os termos originais para qualquer reutilização.
 
 ## Arquivo incluído
 
-`cirrus-coalescence.mp3` é uma cópia integral do MP3 original, sem cortes, remix ou recodificação.
+- Arquivo: `high-end-hustle.mp3`, download original sem cortes ou recodificação.
+- Tamanho: 4705384 bytes.
+- SHA-256: `4ecacca598c10406d79289776e72866a312152054a0bb9502ebbc5d37255ec3c`.
+- Duração anunciada na página: 2min27s.
 
-- SHA-256: `6cfaa02612c2faef478eb36654402845acbbe91fc5c3dbcd9437994b34d60807`
-- Tamanho: 6.737.365 bytes.
-- Formato: MP3, estéreo, 48 kHz, 320 kbps.
-- Duração aproximada: 168,408 segundos.
-
-O site solicita volume de 20% e repete o arquivo usando a função loop do navegador. O arquivo não foi preparado como loop sem emenda; pode haver uma transição perceptível entre fim e início.
+O convite solicita volume de 20%, inicia apenas no primeiro clique de entrada e oferece ON/OFF. Repete pelo loop do navegador; o arquivo não foi editado para loop sem emenda.

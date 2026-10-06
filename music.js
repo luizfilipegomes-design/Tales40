@@ -1,6 +1,6 @@
-// Trilha CC0: cirrus coalescence, por gonpulvo. Veja assets/audio/LICENSE.md.
+// Trilha: High-End Hustle, por Rockot, sob Pixabay Content License. Veja assets/audio/LICENSE.md.
 // Caminho relativo para funcionar no GitHub Pages. Vazio desativa o áudio.
-const soundtrackSource = "assets/audio/cirrus-coalescence.mp3";
+const soundtrackSource = "assets/audio/high-end-hustle.mp3";
 
 (() => {
   const button = document.querySelector("#musicButton");

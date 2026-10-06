@@ -26,12 +26,11 @@ A prévia social usa `assets/images/tales-10.jpg`. Depois de definir o domínio 
 
 ## Trilha sonora
 
-A trilha incluída é **cirrus coalescence**, de **gonpulvo**, publicada pelo autor sob **CC0 1.0 (dedicação ao domínio público)**.
+A trilha incluída é **High-End Hustle - Fashion Luxury Disco**, de **Rockot**, sob **Pixabay Content License**, escolhida pelo usuário. Não é domínio público/CC0.
 
-- Arquivo: `assets/audio/cirrus-coalescence.mp3` (original, sem alterações; aproximadamente 2min48s, 6,74 MB).
-- Origem e licença: [página do autor no WeeklyBeats](https://weeklybeats.com/gonpulvo/music/cirrus-coalescence).
-- Registro da licença e integridade: `assets/audio/LICENSE.md`.
-- Configuração: `soundtrackSource` em `music.js`, com caminho relativo compatível com `/Tales40/` no GitHub Pages.
+- Arquivo: `assets/audio/high-end-hustle.mp3` (download original, sem alterações; aproximadamente 2min27s).
+- Origem: [página oficial no Pixabay](https://pixabay.com/music/upbeat-high-end-hustle-fashion-luxury-disco-253184/).
+- Crédito, procedência e restrições: `assets/audio/LICENSE.md`.
 
 Para substituir a trilha, adicione um MP3 autorizado, atualize `soundtrackSource` e registre a licença correspondente. Defina o caminho como `""` para desativar o áudio.
 
@@ -58,7 +57,7 @@ A narrativa começa com três capítulos de arquivo (nove fotos diferentes), seg
 
 `assets/images/infancia-01.jpg` é a foto original da piscina, com enquadramento apenas por CSS: a restauração foi bloqueada pela ferramenta de imagens. `infancia-02.jpg` a `infancia-09.jpg` são versões tratadas com a ferramenta integrada de imagens: orientação, extração do impresso, cores, reflexos e desgaste. São restaurações assistidas por IA, não digitalizações documentais; compare especialmente a região dos olhos na foto da jaqueta com o original antes da publicação. Os arquivos originais fornecidos pelo usuário permanecem intactos fora do repositório.
 
-O layout de álbum preserva a composição das fotos, sem parallax/zoom, e empilha os retratos em celulares. A sequência adulta e a trilha CC0 continuam funcionando como antes.
+O layout de álbum preserva a composição das fotos, sem parallax/zoom, e empilha os retratos em celulares. A sequência adulta e a trilha licenciada continuam funcionando como antes.
 
 ### Publicação
 
