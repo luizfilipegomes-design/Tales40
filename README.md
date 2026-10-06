@@ -24,10 +24,59 @@ Exemplo:
 
 A prévia social usa `assets/images/tales-10.jpg`. Depois de definir o domínio público, use URLs absolutas nas tags `og:image`, `og:url` e `twitter:image` de `index.html` para maximizar a compatibilidade com aplicativos de mensagem.
 
-## Testar localmente
+## Trilha sonora
+
+A trilha incluída é **High-End Hustle - Fashion Luxury Disco**, de **Rockot**, sob **Pixabay Content License**, escolhida pelo usuário. Não é domínio público/CC0.
+
+- Arquivo: `assets/audio/high-end-hustle.mp3` (download original, sem alterações; aproximadamente 2min27s).
+- Origem: [página oficial no Pixabay](https://pixabay.com/music/upbeat-high-end-hustle-fashion-luxury-disco-253184/).
+- Crédito, procedência e restrições: `assets/audio/LICENSE.md`.
+
+Para substituir a trilha, adicione um MP3 autorizado, atualize `soundtrackSource` e registre a licença correspondente. Defina o caminho como `""` para desativar o áudio.
+
+A trilha começa apenas no primeiro clique em **Entrar na história**, repete em loop e usa volume solicitado de 20%. O controle fixo **♫ Música ON/OFF** pausa e retoma do mesmo ponto, aceita teclado e tem área de toque de pelo menos 44px. Em alguns dispositivos, como iOS, o volume pode seguir o controle físico do aparelho em vez do valor definido pelo site.
+
+Sem arquivo configurado, não há requisição de áudio e o controle mostra **Música indisponível** após a entrada. Bloqueios de reprodução ou falhas no arquivo mantêm a história acessível e permitem tentar novamente no controle. Voltar ao início e clicar novamente não altera a escolha de pausa do convidado.
+
+Validação automatizada: `node --test tests/music.test.cjs`.
+
+Antes de publicar, teste em Chrome/Firefox/Safari desktop e Safari iOS/Chrome Android: silêncio antes da entrada, início no clique, ON/OFF, retomada, loop, volume do aparelho, navegação completa e URL no GitHub Pages. Teste também arquivo ausente e bloqueio de reprodução. O volume e as restrições de reprodução devem ser conferidos em aparelhos reais.
+
+## Prévia local
 
 Na raiz do projeto, execute `python3 -m http.server 8000` e abra `http://localhost:8000`. Não abra apenas o arquivo HTML, pois um servidor local reproduz melhor o comportamento da publicação.
 
 ## Publicar no GitHub Pages
 
 No GitHub, acesse **Settings → Pages**, selecione **Deploy from a branch**, escolha a branch principal e a pasta `/ (root)`. Todos os caminhos do site são relativos e funcionam quando publicado no subdiretório `/Tales40/`.
+
+
+## Álbum de infância
+
+A narrativa começa com três capítulos de arquivo (nove fotos diferentes), seguidos por oito fotos da sequência adulta e duas novas fotos afetivas. A ordem é editorial e aproximada, sem atribuir datas ou parentescos não confirmados. Os dois pares duplicados dos anexos foram usados uma vez cada.
+
+`assets/images/infancia-01.jpg` é a foto original da piscina, com enquadramento apenas por CSS: a restauração foi bloqueada pela ferramenta de imagens. `infancia-02.jpg` a `infancia-09.jpg` são versões tratadas com a ferramenta integrada de imagens: orientação, extração do impresso, cores, reflexos e desgaste. São restaurações assistidas por IA, não digitalizações documentais; compare especialmente a região dos olhos na foto da jaqueta com o original antes da publicação. Os arquivos originais fornecidos pelo usuário permanecem intactos fora do repositório.
+
+O layout de álbum preserva a composição das fotos, sem parallax/zoom, e empilha os retratos em celulares. A sequência adulta e a trilha licenciada continuam funcionando como antes.
+
+### Publicação
+
+As alterações estão na branch `codex/trilha-sonora`, no PR #5. Para publicar no GitHub Pages, revisar as fotos e fazer merge do PR na `main`. Nenhum merge automático foi executado.
+
+
+## Revisão afetiva final
+
+A última foto anterior (`tales-10.jpg`) foi retirada da narrativa. A foto com a avó aparece no capítulo “Amor que permanece”, como homenagem; a foto com Chopin e Bisteca encerra a galeria em “Companheiros de vida”. Ambas são cópias dos JPEGs originais enviados, sem restauração ou alteração de conteúdo, e exibidas integralmente sem zoom/parallax. A narrativa contém 19 fotos em nove capítulos. Não foram atribuídos nomes individuais aos cães pela posição na imagem.
+
+A foto da sala de espera do aeroporto (`tales-09.jpg`) também foi retirada da narrativa, a pedido do usuário. Os arquivos anteriores permanecem no histórico do projeto.
+
+
+## Confirmação de presença e localização
+
+- Botão “Confirmar presença”: abre um Google Formulário publicado, sem exigência de login, com nome completo, presença e quantidade de acompanhantes obrigatórios, mais nomes dos acompanhantes opcionais. O formulário informa prazo de 20/10/2026. Respostas não são exibidas aos participantes e e-mails não são coletados.
+- Link público: https://docs.google.com/forms/d/e/1FAIpQLSeIRpfmz8xtcZrcxSBFU-Aw6UrlH9O26zK30gx8cskZCWos3w/viewform
+- Administração (conta proprietária do Google): https://docs.google.com/forms/d/16qqYk-yvDnmXZBYKLETlSeYMWAXCRFZJRrWS9rUDyyM/edit — consultar a aba “Respostas”.
+- Botão “Como chegar”: abre o Google Maps pesquisando o endereço confirmado pelo usuário: Rua Genebra, 296, São Paulo – SP.
+- Os dois links abrem em nova aba para preservar o ponto da narrativa. O formulário está publicado independentemente do GitHub Pages; o convite atualizado depende do merge do PR #5.
+- O prazo está informado nos textos; não há encerramento automático da coleta em 20/10. O organizador pode encerrar manualmente no Google Forms.
+- A imagem social foi atualizada para o retrato de infância, evitando continuar exibindo a foto removida da galeria.

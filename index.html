@@ -9,7 +9,7 @@
   <title>Tales 40 • Uma vida, muitas histórias</title>
   <meta property="og:title" content="Tales 40 • Uma vida, muitas histórias">
   <meta property="og:description" content="Quatro décadas merecem uma noite inesquecível. 31 de outubro de 2026.">
-  <meta property="og:image" content="assets/images/tales-10.jpg">
+  <meta property="og:image" content="assets/images/infancia-02.jpg">
   <meta property="og:image:alt" content="Convite para a comemoração dos 40 anos do Tales">
   <meta property="og:type" content="website">
   <meta property="og:url" content=".">
@@ -17,13 +17,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tales 40 • Uma vida, muitas histórias">
   <meta name="twitter:description" content="Quatro décadas merecem uma noite inesquecível. 31 de outubro de 2026.">
-  <meta name="twitter:image" content="assets/images/tales-10.jpg">
+  <meta name="twitter:image" content="assets/images/infancia-02.jpg">
 
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="music.js" defer></script>
 </head>
 <body class="is-locked">
   <a class="skip-link" href="#historia">Ir para a história</a>
+  <div class="music-control">
+    <button class="music-button" id="musicButton" type="button" aria-pressed="false" aria-describedby="musicStatus" hidden>♫ Música OFF</button>
+    <p class="music-status" id="musicStatus" role="status"></p>
+  </div>
 
   <header class="hero" id="inicio">
     <div class="hero__glow" aria-hidden="true"></div>
@@ -36,7 +41,7 @@
       <p class="hero__message">Quatro décadas merecem<br>uma noite inesquecível.</p>
       <div class="hero__details">
         <p><time datetime="2026-10-31T19:00">31 de outubro de 2026 <span>•</span> 19h</time></p>
-        <address>Salão de Festas <strong>MY SPACE</strong><br>Rua Genebra, 296</address>
+        <address>Salão de Festas <strong>MY SPACE</strong><br>Rua Genebra, 296 · São Paulo – SP</address>
       </div>
       <button class="enter-button" id="enterButton" type="button">
         <span>Entrar na história</span><span class="enter-button__arrow" aria-hidden="true">↓</span>
@@ -68,13 +73,14 @@
       <div class="finale__date">
         <time datetime="2026-10-31T19:00"><strong>31 • 10 • 2026</strong><span>19h</span></time>
       </div>
-      <address>Salão de Festas <strong>MY SPACE</strong><br>Rua Genebra, 296</address>
+      <address>Salão de Festas <strong>MY SPACE</strong><br>Rua Genebra, 296 · São Paulo – SP</address>
       <p class="finale__invite">Venha brindar as memórias, os encontros<br class="desktop-only"> e tudo o que ainda está por vir.</p>
 
-      <!-- Pontos de extensão: confirmação, mapa e controle de música entrarão aqui. -->
-      <div class="future-actions" aria-label="Recursos que estarão disponíveis em breve">
-        <span>Confirmação em breve</span><span>Localização em breve</span>
+      <div class="event-actions" aria-label="Confirmação e localização">
+        <a class="event-action event-action--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeIRpfmz8xtcZrcxSBFU-Aw6UrlH9O26zK30gx8cskZCWos3w/viewform" target="_blank" rel="noopener noreferrer" aria-label="Confirmar presença — abre o formulário em nova aba">Confirmar presença</a>
+        <a class="event-action" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Genebra%2C+296%2C+S%C3%A3o+Paulo%2C+SP" target="_blank" rel="noopener noreferrer" aria-label="Como chegar — abre o Google Maps em nova aba">Como chegar</a>
       </div>
+      <p class="event-actions__hint">Confirme até 20 de outubro · Os links abrem em uma nova aba.</p>
       <a class="back-link" href="#inicio">Voltar ao início ↑</a>
     </section>
   </main>

@@ -21,6 +21,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .skip-link { position: fixed; z-index: 100; top: .75rem; left: .75rem; padding: .7rem 1rem; color: var(--ink); background: var(--paper); transform: translateY(-160%); }
 .skip-link:focus { transform: none; }
 
+.music-control { position: fixed; z-index: 20; right: max(1rem, env(safe-area-inset-right)); bottom: max(1rem, env(safe-area-inset-bottom)); max-width: min(19rem, calc(100vw - 2rem)); text-align: right; }
+.music-button { min-height: 44px; padding: .75rem 1rem; border: 1px solid var(--line); border-radius: 2rem; color: var(--gold); background: rgba(16,13,15,.94); font: 500 .65rem/1.4 var(--sans); letter-spacing: .08em; cursor: pointer; }
+.music-button[hidden] { display: none; }
+.music-button:hover { border-color: var(--gold); }
+.music-button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.music-button:disabled { color: var(--muted); cursor: default; }
+.music-status { margin: .5rem 0 0; padding: .65rem; border-radius: .5rem; color: var(--paper); background: rgba(16,13,15,.94); font-size: .7rem; line-height: 1.5; }
+.music-status:empty { display: none; }
+
 .hero { position: relative; z-index: 5; display: grid; min-height: 100svh; place-items: center; padding: max(2rem, env(safe-area-inset-top)) 1.5rem max(2rem, env(safe-area-inset-bottom)); overflow: hidden; text-align: center; background: radial-gradient(circle at 50% 30%, #321721 0, #160f13 42%, #0b090a 85%); }
 .hero::before { content: ""; position: absolute; inset: 1rem; border: 1px solid rgba(201,170,115,.18); pointer-events: none; }
 .hero__glow { position: absolute; width: 75vmin; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 100px rgba(105,35,60,.25), inset 0 0 100px rgba(105,35,60,.16); animation: breathe 5s ease-in-out infinite; }
@@ -96,8 +105,14 @@ body.has-entered .progress { opacity: 1; }
 .finale__date span { padding-left: 1.25rem; border-left: 1px solid var(--line); }
 .finale address { margin-top: 1.6rem; font-size: .72rem; line-height: 1.8; letter-spacing: .1em; text-transform: uppercase; }
 .finale__invite { margin: 1.5rem 0; color: var(--muted); font: italic 400 1.25rem/1.5 var(--serif); }
-.future-actions { display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center; }
-.future-actions span { padding: .65rem .8rem; border: 1px solid rgba(201,170,115,.2); color: #8f8482; font-size: .5rem; letter-spacing: .14em; text-transform: uppercase; }
+.event-actions { display: flex; gap: .8rem; flex-wrap: wrap; justify-content: center; width: min(100%, 32rem); }
+.event-action { display: inline-flex; flex: 1 1 12rem; align-items: center; justify-content: center; gap: .65rem; min-height: 48px; padding: .9rem 1.25rem; border: 1px solid var(--gold); color: var(--paper); background: rgba(16,13,15,.65); font: 500 .62rem/1.5 var(--sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .2s, color .2s; }
+.event-action--primary { background: var(--gold); color: var(--ink); }
+.event-action:hover { background: var(--paper); color: var(--ink); }
+.event-action:focus-visible { outline: 2px solid var(--paper); outline-offset: 4px; }
+.event-action:disabled { opacity: .5; cursor: default; }
+.event-actions__hint { margin: .8rem 0 0; color: var(--muted); font-size: .65rem; line-height: 1.6; }
+
 .back-link { margin-top: 2rem; color: var(--gold); font-size: .58rem; letter-spacing: .15em; text-decoration: none; text-transform: uppercase; }
 .reveal { opacity: 0; transform: translateY(2rem); transition: opacity .9s, transform .9s; }
 .reveal.is-visible { opacity: 1; transform: none; }
@@ -144,3 +159,27 @@ body.has-entered .progress { opacity: 1; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Fotografias de arquivo: composição completa, sem zoom ou parallax. */
+.story-card--album { min-height: auto; gap: 2.5rem; padding-top: 5rem; padding-bottom: 6rem; }
+.story-card--album .story-card__content { position: relative; inset: auto; order: -1; width: min(100%, 76rem); margin: auto; padding: 0; background: none; box-shadow: none; }
+.story-card--album h3 { max-width: 21em; }
+.story-card--album .story-card__media { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; min-height: 0; align-items: center; }
+.story-card--album .story-card__frame { position: relative; padding: .65rem; background: var(--paper); }
+.story-card--album .story-card__frame::after { box-shadow: none; }
+.story-card--album img, .story-card--album.is-visible img { height: auto; object-fit: contain; transform: none; will-change: auto; }
+.story-card--album .story-card__frame:nth-child(2) { margin-top: 3rem; }
+/* A foto da piscina permanece original; o enquadramento exclui bordas externas. */
+.story-card--album img[src$="infancia-01.jpg"] { aspect-ratio: 5 / 7; object-fit: cover; }
+@media (max-width: 749px) {
+  .story-card--album .story-card__media { grid-template-columns: 1fr; gap: 2rem; max-width: 30rem; }
+  .story-card--album .story-card__frame:nth-child(2) { margin-top: 0; }
+}
+
+/* Retratos afetivos completos, com texto separado da fotografia. */
+.story-card--portrait { min-height: auto; gap: 2.5rem; }
+.story-card--portrait .story-card__content { position: relative; inset: auto; order: -1; width: min(100%, 58rem); margin: auto; padding: 0; background: none; box-shadow: none; }
+.story-card--portrait h3 { max-width: 20em; }
+.story-card--portrait .story-card__media { width: min(100%, 48rem); min-height: 0; }
+.story-card--portrait .story-card__frame { position: relative; width: 100%; }
+.story-card--portrait img, .story-card--portrait.is-visible img { height: auto; object-fit: contain; transform: none; will-change: auto; }
