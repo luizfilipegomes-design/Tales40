@@ -69,3 +69,14 @@ As alterações estão na branch `codex/trilha-sonora`, no PR #5. Para publicar 
 A última foto anterior (`tales-10.jpg`) foi retirada da narrativa. A foto com a avó aparece no capítulo “Amor que permanece”, como homenagem; a foto com Chopin e Bisteca encerra a galeria em “Companheiros de vida”. Ambas são cópias dos JPEGs originais enviados, sem restauração ou alteração de conteúdo, e exibidas integralmente sem zoom/parallax. A narrativa contém 19 fotos em nove capítulos. Não foram atribuídos nomes individuais aos cães pela posição na imagem.
 
 A foto da sala de espera do aeroporto (`tales-09.jpg`) também foi retirada da narrativa, a pedido do usuário. Os arquivos anteriores permanecem no histórico do projeto.
+
+
+## Confirmação de presença e localização
+
+- Botão “Confirmar presença”: abre um Google Formulário publicado, sem exigência de login, com nome completo, presença e quantidade de acompanhantes obrigatórios, mais nomes dos acompanhantes opcionais. O formulário informa prazo de 20/10/2026. Respostas não são exibidas aos participantes e e-mails não são coletados.
+- Link público: https://docs.google.com/forms/d/e/1FAIpQLSeIRpfmz8xtcZrcxSBFU-Aw6UrlH9O26zK30gx8cskZCWos3w/viewform
+- Administração (conta proprietária do Google): https://docs.google.com/forms/d/16qqYk-yvDnmXZBYKLETlSeYMWAXCRFZJRrWS9rUDyyM/edit — consultar a aba “Respostas”.
+- Botão “Como chegar”: abre o Google Maps pesquisando o endereço confirmado pelo usuário: Rua Genebra, 296, São Paulo – SP.
+- Os dois links abrem em nova aba para preservar o ponto da narrativa. O formulário está publicado independentemente do GitHub Pages; o convite atualizado depende do merge do PR #5.
+- O prazo está informado nos textos; não há encerramento automático da coleta em 20/10. O organizador pode encerrar manualmente no Google Forms.
+- A imagem social foi atualizada para o retrato de infância, evitando continuar exibindo a foto removida da galeria.
