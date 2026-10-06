@@ -21,9 +21,14 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
+  <script src="music.js" defer></script>
 </head>
 <body class="is-locked">
   <a class="skip-link" href="#historia">Ir para a história</a>
+  <div class="music-control">
+    <button class="music-button" id="musicButton" type="button" aria-pressed="false" aria-describedby="musicStatus" hidden>♫ Música OFF</button>
+    <p class="music-status" id="musicStatus" role="status"></p>
+  </div>
 
   <header class="hero" id="inicio">
     <div class="hero__glow" aria-hidden="true"></div>
@@ -71,7 +76,7 @@
       <address>Salão de Festas <strong>MY SPACE</strong><br>Rua Genebra, 296</address>
       <p class="finale__invite">Venha brindar as memórias, os encontros<br class="desktop-only"> e tudo o que ainda está por vir.</p>
 
-      <!-- Pontos de extensão: confirmação, mapa e controle de música entrarão aqui. -->
+      <!-- Pontos de extensão: confirmação e mapa entrarão aqui. -->
       <div class="future-actions" aria-label="Recursos que estarão disponíveis em breve">
         <span>Confirmação em breve</span><span>Localização em breve</span>
       </div>

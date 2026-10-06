@@ -26,6 +26,24 @@ A prévia social usa `assets/images/tales-10.jpg`. Depois de definir o domínio 
 
 ## Testar localmente
 
+## Trilha sonora
+
+A implementação está pronta, mas **nenhuma música foi incluída**: o repositório ainda não contém um arquivo de áudio com licença de uso.
+
+1. Adicione uma trilha autorizada em `assets/audio/trilha.mp3` (MP3 para ampla compatibilidade). Não use uma música comercial sem autorização para publicá-la no site.
+2. Registre em `assets/audio/LICENSE.md` o título, autor, origem, licença/autorização e a atribuição exigida. Se a licença exigir crédito visível, inclua esse crédito no convite antes de publicar.
+3. Em `music.js`, altere `const soundtrackSource = "";` para `const soundtrackSource = "assets/audio/trilha.mp3";`. O caminho relativo funciona no GitHub Pages em `/Tales40/`.
+
+A trilha começa apenas no primeiro clique em **Entrar na história**, repete em loop e usa volume solicitado de 20%. O controle fixo **♫ Música ON/OFF** pausa e retoma do mesmo ponto, aceita teclado e tem área de toque de pelo menos 44px. Em alguns dispositivos, como iOS, o volume pode seguir o controle físico do aparelho em vez do valor definido pelo site.
+
+Sem arquivo configurado, não há requisição de áudio e o controle mostra **Música indisponível** após a entrada. Bloqueios de reprodução ou falhas no arquivo mantêm a história acessível e permitem tentar novamente no controle. Voltar ao início e clicar novamente não altera a escolha de pausa do convidado.
+
+Validação automatizada: `node --test tests/music.test.cjs`.
+
+Após adicionar o arquivo real, teste em Chrome/Firefox/Safari desktop e Safari iOS/Chrome Android: silêncio antes da entrada, início no clique, ON/OFF, retomada, loop, volume do aparelho, navegação completa e URL no GitHub Pages. Teste também arquivo ausente e bloqueio de reprodução. A reprodução real e o volume precisam dessa validação com a trilha licenciada.
+
+## Prévia local
+
 Na raiz do projeto, execute `python3 -m http.server 8000` e abra `http://localhost:8000`. Não abra apenas o arquivo HTML, pois um servidor local reproduz melhor o comportamento da publicação.
 
 ## Publicar no GitHub Pages
