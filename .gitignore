@@ -1,0 +1,29 @@
+# Binary image assets must not be committed with the invitation.
+*.avif
+*.bmp
+*.gif
+*.ico
+*.jpeg
+*.jpg
+*.png
+*.tif
+*.tiff
+*.webp
+
+# Other common binary media and font formats.
+*.avi
+*.eot
+*.mov
+*.mp3
+*.mp4
+*.ogg
+*.otf
+*.pdf
+*.ttf
+*.wav
+*.webm
+*.woff
+*.woff2
+
+# Keep the WhatsApp preview as a code/documentation reference only.
+assets/images/whatsapp-preview.jpg
